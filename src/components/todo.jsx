@@ -69,9 +69,10 @@ function Todo() {
     return (
         <div>
             {message && (
-                <div className="text-center text-2xl mt-4">{message}</div>
+                <div className="text-center text-2xl">{message}</div>
             )}
             <form onSubmit={addHandler} className="flex justify-center p-12">
+                <div className="submit border-2 border-black rounded-md">
                 <input
                     type="text"
                     ref={inputFocus}
@@ -80,15 +81,16 @@ function Todo() {
                     }}
                     value={list}
                     placeholder="tambahkan tugas"
-                    className="text-center border-2 border-black text-black rounded-md font-sans font-bold"
+                    className="text-center focus:outline-none  text-black  font-sans font-bold"
                 />
                 <button
                     type="submit"
-                    className="p-2 border-2 border-black rounded-md mx-2"
+                    className="p-2  bg-black text-white"
                 >
                     {edit.id ? "perbarui" : "tambahkan"}
                 </button>
-                {edit.id && <button onClick={cancelHandler}>batalkan</button>}
+                {edit.id && <button className="bg-red-600 p-2 text-white" onClick={cancelHandler}>batalkan</button>}
+                </div>
             </form>
             {array.length > 0 ? (
                 <ul className="text-center ">

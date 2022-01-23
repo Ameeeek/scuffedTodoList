@@ -2,7 +2,7 @@ import "./App.css";
 import Todo from './components/todo.jsx';
 function App() {
  
-    return <div>
+    return <div className="p-24">
       <Todo />
     </div>;
 }
